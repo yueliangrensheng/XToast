@@ -1,0 +1,3 @@
+rootProject.name='XToast'
+include ':app'
+include ':xtoast'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/xtoast_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:minHeight="48dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text=""
+        android:gravity="center"
+        android:background="@drawable/xtoast_bg"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+</LinearLayout>
