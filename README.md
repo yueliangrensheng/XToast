@@ -1,7 +1,7 @@
 # XToast
 XToast是一个Toast封装组件
 
-# how to use
+## how to use
 
 1. app/build.gradle 配置如下：
    
@@ -9,7 +9,7 @@ XToast是一个Toast封装组件
    dependencies {
        ...
    
-       implementation 'com.yazao:xtoast:1.0.2'
+       implementation 'io.github.yueliangrensheng:xtoast:1.0.2'
    }
    ```
 
