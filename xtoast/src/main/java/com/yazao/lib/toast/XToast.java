@@ -1,6 +1,7 @@
 package com.yazao.lib.toast;
 
 import android.content.Context;
+import android.os.Looper;
 import android.view.Gravity;
 import android.widget.Toast;
 
@@ -71,7 +72,10 @@ public final class XToast {
         show(msg, Toast.LENGTH_LONG, gravity);
     }
 
-    private static void show(String msg, int duration, int gravity) {
+    private static synchronized void show(String msg, int duration, int gravity) {
+        if (Looper.myLooper() == null) {
+            Looper.prepare();
+        }
         if (mApplicationContext == null) {
             throw new RuntimeException("please init() first");
         }
@@ -83,9 +87,13 @@ public final class XToast {
         mToast.setDuration(duration);
         mToast.setText(msg);
         mToast.show();
+        Looper.loop();
     }
 
     private static synchronized void show(@StringRes int resId, int duration, int gravity) {
+        if (Looper.myLooper() == null) {
+            Looper.prepare();
+        }
         if (mApplicationContext == null) {
             throw new RuntimeException("please init() first");
         }
@@ -97,5 +105,6 @@ public final class XToast {
         mToast.setDuration(duration);
         mToast.setText(resId);
         mToast.show();
+        Looper.loop();
     }
 }

@@ -19,6 +19,9 @@ public class IToast extends Toast {
 
     public void setBackground(@DrawableRes int backgroundResId) {
         TextView msgText = getTextView();
+        if (msgText == null) {
+            return;
+        }
         if (backgroundResId == 0) {
             backgroundResId = R.drawable.xtoast_bg;
         }
@@ -28,12 +31,18 @@ public class IToast extends Toast {
     @Override
     public void setText(int resId) {
         TextView msgText = getTextView();
+        if (msgText == null) {
+            return;
+        }
         msgText.setText(resId);
     }
 
     @Override
     public void setText(CharSequence s) {
         TextView msgText = getTextView();
+        if (msgText == null) {
+            return;
+        }
         msgText.setText(s);
     }
 
