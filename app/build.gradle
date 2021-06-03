@@ -28,5 +28,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    implementation 'com.yazao:xtoast:1.0.2'
+    implementation 'io.github.yueliangrensheng:xtoast:1.0.3'
+//    implementation project(':xtoast')
 }

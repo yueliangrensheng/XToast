@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+
 import com.yazao.demo.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,11 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 // 2. use XToast component
                 String message = "I'm a Toast";
                 //        XToast.show(message);
-                XToast.show(message, Gravity.CENTER);
+//                XToast.show(message, Gravity.CENTER);
 
-                int msgResId = R.string.app_name;
-                //        XToast.show(msgResId);
 
+                // 3. thread show XToast
+                new Thread() {
+                    @Override
+                    public void run() {
+                        int msgResId = R.string.app_name;
+                        XToast.show(msgResId);
+                    }
+                }.start();
 
             }
         });
